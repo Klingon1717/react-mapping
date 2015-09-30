@@ -3,7 +3,14 @@ var ProductComponent = require('./ProductComponent');
 
 module.exports = React.createClass({
 	render: function() {
-		return (
+			var productRow = this.props.products.map(function(product) {
+			
+			return(
+				<ProductComponent product={product} />
+			)
+		});
+
+	
 			<div className="row">
 				<h1>Products</h1>
 				<table className="table">
@@ -16,6 +23,7 @@ module.exports = React.createClass({
 						</tr>
 					</thead>
 					<tbody>
+					{productRow}
 					</tbody>
 				</table>
 			</div>
