@@ -9,6 +9,7 @@ module.exports = React.createClass({
 				<ProductComponent product={product} />
 			)
 		});
+			return(
 
 	
 			<div className="row">

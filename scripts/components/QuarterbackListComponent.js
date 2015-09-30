@@ -20,6 +20,7 @@ module.exports = React.createClass({
 						</tr>
 					</thead>
 					<tbody>
+					{}
 					</tbody>
 				</table>
 			</div>
