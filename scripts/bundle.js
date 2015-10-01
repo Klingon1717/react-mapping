@@ -32918,7 +32918,17 @@ var React = require('react');
 module.exports = React.createClass({
 	displayName: 'exports',
 
-	render: function render() {}
+	render: function render() {
+		return React.createElement(
+			'tr',
+			null,
+			React.createElement(
+				'td',
+				null,
+				this.props.description.get('description')
+			)
+		);
+	}
 });
 
 },{"react":159}],171:[function(require,module,exports){
@@ -32931,6 +32941,12 @@ module.exports = React.createClass({
 	displayName: 'exports',
 
 	render: function render() {
+
+		var todoList = this.props.todos.map(function (description) {
+
+			return React.createElement(TodoComponent, { description: description });
+		});
+
 		return React.createElement(
 			'div',
 			{ className: 'row' },
@@ -32938,6 +32954,28 @@ module.exports = React.createClass({
 				'h1',
 				null,
 				'Todos'
+			),
+			React.createElement(
+				'table',
+				{ className: 'table' },
+				React.createElement(
+					'thead',
+					null,
+					React.createElement(
+						'tr',
+						null,
+						React.createElement(
+							'th',
+							null,
+							'description'
+						)
+					)
+				),
+				React.createElement(
+					'tbody',
+					null,
+					todoList
+				)
 			)
 		);
 	}
